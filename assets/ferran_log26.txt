@@ -1,0 +1,11 @@
+[SUBJECT-27: MONITORING LOG]
+Timestamp: 04:26 UTC
+Status: Transmission active
+
+The signal was received within the frequency range of 432.18Hz to 433.02Hz. During monitoring, a faint message could be heard through the interference: “...they are not shadows... they are watching from below...”
+I don't believe this signal is of terrestrial origin. Each time I attempt decoding, there's a distinct pressure in my head—like something resisting the process. 
+On several occasions, I’ve heard whispering voices, though only when I’m completely alone in the control room. I can’t explain it rationally. 
+
+If anyone ever finds this log, heed my warning: DO NOT USE THE WORD “echo” when trying to request a retransmission.
+
+[end of entry]

@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ROOM-RED - AEONCOM Internal</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #ff4d4d;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: #ff4d4d;
+    }
+    .marquee {
+      background-color: #222;
+      color: yellow;
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 1.1em;
+      padding: 8px;
+      text-align: center;
+    }
+    .container {
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    .desc {
+      font-size: 0.9em;
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ROOM-RED ACCESS NODE</h1>
+  </header>
+  <div class="marquee">
+    ⚠️ AEONCOM WARNING: Classified Access Protocol Active ⚠️
+  </div>
+
+  <div class="container">
+    <p>This archive node contains advanced signal behavior research and encoded response logs.</p>
+    <p class="desc">Access to full content is restricted.</p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const key = params.get("access");
+
+    if (key === "echo") {
+      const link = document.createElement('a');
+      link.href = "./assets/red_echo.log";
+      link.download = "red_echo.log";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
