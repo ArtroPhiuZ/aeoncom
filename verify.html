@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Verify Access - AEONCOM</title>
+  <style>
+    body {
+      background: #111;
+      color: #f2f2f2;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      color: #ff4d4d;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      background: #222;
+      color: #fff;
+      border: 1px solid #444;
+    }
+    .desc {
+      color: #888;
+      font-size: 0.9em;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>ENTER ACCESS CODE</h1>
+  <p class="desc">Unauthorized access to AEONCOM files is prohibited.</p>
+  <input type="password" id="password" placeholder="Access Key">
+  <button onclick="verify()">Unlock</button>
+  <p id="message"></p>
+
+  <script>
+    function verify() {
+      const input = document.getElementById("password").value.trim();
+      if (input === "lock_c82") {
+        window.location.href = "./assets/archive.zip";
+      } else {
+        document.getElementById("message").innerText = "Access Denied.";
+      }
+    }
+  </script>
+</body>
+</html>

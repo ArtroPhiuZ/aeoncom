@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NODE-LOCK Interface - AEONCOM</title>
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #00ff66;
+      font-family: monospace;
+      padding: 40px;
+    }
+    .terminal {
+      background-color: #111;
+      padding: 20px;
+      border: 1px solid #333;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #00ff66;
+      color: #00ff66;
+      font-family: monospace;
+      font-size: 1em;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .response {
+      margin-top: 20px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <p>AEONCOM NODE-LOCK INTERFACE - ID: NLK-E7</p>
+    <p id="clearance">Clearance Verified: unknown</p>
+    <p>Type command to continue:</p>
+    <input type="text" id="command" placeholder=">">
+    <div class="response" id="response"></div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const key = params.get("key");
+    const clearanceText = document.getElementById("clearance");
+    const cmdInput = document.getElementById('command');
+    const responseBox = document.getElementById('response');
+
+    if (key === "blindspot") {
+      clearanceText.textContent = "Clearance Verified: blindspot";
+    }
+
+    cmdInput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        const cmd = cmdInput.value.trim().toLowerCase();
+        if (cmd === "unlock_s27") {
+          if (key === "blindspot") {
+            responseBox.innerHTML = 
+              "[ACCESS GRANTED]\n" +
+              "Memo S27 retrieved:\n" +
+              ">> Opening memo_s27.pdf...";
+            setTimeout(() => {
+              window.location.href = "./assets/memo_s27.pdf";
+            }, 2000);
+          } else {
+            responseBox.innerHTML = "[ERROR] Clearance level insufficient.";
+          }
+        } else {
+          responseBox.innerHTML = "[ERROR] Unknown command.";
+        }
+        cmdInput.value = "";
+      }
+    });
+  </script>
+</body>
+</html>
